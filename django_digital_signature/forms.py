@@ -35,7 +35,9 @@ class SignatureForm(forms.ModelForm):
 			record.document = smodels.Document.objects.get_or_create(title=self.cleaned_data['document_title'],\
 					content_type=ct,object_pk=self.cleaned_data['object_pk'])[0]
 
-		record.save()
+		if kwargs.pop('commit',None) != False:
+			record.save()
+		return record
 
 	class Meta:
 		model = smodels.Signatory
