@@ -5,11 +5,10 @@ from django.contrib.contenttypes.models import ContentType
 
 """
 The below line will seem rather strange. I like Bennet's implementation so much
-that I'm using it here. Its so abstract that it really transcends django.contrib.comments,
+that I'm using it here. Its so abstract that it really transcends django_comments,
 but that's the only place it exists, so I'm stealing it here.
 """
-
-from django.contrib.comments.templatetags.comments import BaseCommentNode as BaseSignatoryNode
+from django_comments.templatetags.comments import BaseCommentNode as BaseSignatoryNode
 
 register = template.Library()
 
